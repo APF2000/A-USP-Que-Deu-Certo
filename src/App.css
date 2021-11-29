@@ -31,7 +31,7 @@ h3 {
 
 section {
     align-self: center;
-    width:70%;
+    width:60%;
     padding: 5rem;
     background-color: rgb(19, 13, 13);
     color: white;
@@ -45,11 +45,6 @@ form {
     background-color: rgb(37, 37, 37)
 }
 
-li {
-    display: flex;
-    flex-direction: column ;
-    align-items: flex-start;
-}
   
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
