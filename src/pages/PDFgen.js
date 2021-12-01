@@ -13,10 +13,10 @@ export default function PDFgen() {
             <section>
                 <p>Sim, a Poli fez os templates de PDFs para preenchermos. No entanto, ainda há aqueles que esquecem campos e documentos, onerando os já parcos funcionários.</p>
                 <p>Pensando nisso, eu e o Pires demos nosso precioso tempo procrastinado para automatizar esse processo. De nada.</p>
-                <p>Seus documentos não são por/de nossa conta.</p>
+                <p>Seus dados não são por/de nossa conta.</p>
 
 
-                <form>
+                <form style={{paddingRight:'1rem'}}>
                     <h1>Selecione os documentos:</h1>
                     <input type='checkbox' name='plano-estagio' onChange={() => { setDocs({ ...docs, plano: !docs.plano }) }} />
                     <label htmlFor="plano-estagio">Plano de Estágio</label>
@@ -39,9 +39,7 @@ export default function PDFgen() {
 
                 </form>
 
-                <FieldContainer opts={docs} />
-
-                <button type="submit">Gerar PDFs!</button>
+                <FieldContainer docs={docs} />
 
             </section>
 

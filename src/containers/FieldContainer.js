@@ -1,9 +1,16 @@
 import React, { useState } from 'react'
+import PDFPrinter from "../components/PDFPrinter";
+
+const handleSubmit = (e, docs, dadosAluno, dadosEmpresa, dadosEstagio) => {
+    e.preventDefault();
+
+}
 
 export const FieldContainer = ({ docs }) => {
     const [dadosAluno, setDadosAluno] = useState({ nomeAluno: '', CPFAluno: '', NUSP: '', telAluno: '', cursoAluno: '', emailAluno: '' });
+    const [dadosEmpresa, setDadosEmpresa] = useState({nomeEmpresa:'', CNPJ:'', ramo: ''})
     return (
-        <>
+        <form style={{flexDirection:'column', paddingTop:'1.5rem'}} onSubmit={(e)=>{handleSubmit(e, docs, dadosAluno)}}>
             <label htmlFor="aluno">Info do Aluno</label>
             <input type="text"   name="nomeAluno"   placeholder='nome'              onChange={(e) => { setDadosAluno({ ...dadosAluno, nomeAluno: e.target.value }) }} />
             <input type="number" name="cpf"         placeholder='CPF'               onChange={(e) => { setDadosAluno({ ...dadosAluno, CPFAluno: e.target.value })  }} />
@@ -28,6 +35,9 @@ export const FieldContainer = ({ docs }) => {
             <input type="date" name="data-fim" />
             <label htmlFor="valor">Valor:</label>
             <input type="number" name="valor" />*/}
-        </>
+
+            
+            <button type='submit'>Gerar PDFs!</button>
+        </form>
     )
 }
